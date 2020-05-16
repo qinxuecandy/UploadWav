@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
     };
     // 声明一个集合，在后面的代码中用来存储用户拒绝授权的权
     List<String> mPermissionList = new ArrayList<>();
-    //显示图片窗体
-    private ImageView showImg;
-    //图片路径
+//    //显示图片窗体
+//    private ImageView showImg;
+    //文件路径
     private String path;
     //
     File f;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showImg = findViewById(R.id.img);
+//        showImg = findViewById(R.id.img);
         //6.0获取多个权限
         mPermissionList.clear();
         for (int i = 0; i < permissions.length; i++) {
@@ -47,29 +47,29 @@ public class MainActivity extends AppCompatActivity {
         }
         //未授予的权限为空，表示都授予了
         if (mPermissionList.isEmpty()) {
-            //读取根目录下的一张图片
-            path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/1.png";
+            //读取根目录下的音频文件
+            path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/test.wav";
             boolean fileExist = fileIsExists(path);
             if(fileExist){
                 Toast.makeText(MainActivity.this,"开始上传"+f.getAbsolutePath(),Toast.LENGTH_LONG).show();
                 try {
-                    //上传图片
+                    //上传文件
                     ImageUpload.run(f);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-            readImg(showImg);
+//            readImg(showImg);
         } else {//请求权限方法
             String[] permissions = mPermissionList.toArray(new String[mPermissionList.size()]);
             ActivityCompat.requestPermissions(MainActivity.this, permissions, 1);
         }
     }
-    //界面显示图片
-    public void readImg(View view) {
-        Bitmap bitmap = BitmapFactory.decodeFile(path);
-        showImg.setImageBitmap(bitmap);
-    }
+//    //界面显示图片
+//    public void readImg(View view) {
+//        Bitmap bitmap = BitmapFactory.decodeFile(path);
+//        showImg.setImageBitmap(bitmap);
+//    }
 
     //判断文件是否存在
     public boolean fileIsExists(String strFile) {

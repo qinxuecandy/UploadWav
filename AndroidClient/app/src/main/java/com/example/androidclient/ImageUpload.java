@@ -31,7 +31,7 @@ public class ImageUpload{
                 RequestBody requestBody = new MultipartBody.Builder()
                         .setType(MultipartBody.FORM)
                         .addFormDataPart("title", "Square Logo")
-                        .addFormDataPart("file", UUID.randomUUID().toString()+".png",
+                        .addFormDataPart("file", UUID.randomUUID().toString()+".wav",
                                 RequestBody.create(MEDIA_TYPE_PNG, file))
                         .build();
                 //设置为自己的ip地址
