@@ -30,10 +30,13 @@ def upload():
         basepath = os.path.dirname(__file__)
         # 一定要先创建该文件夹，不然会提示没有该路径
         upload_path = os.path.join(basepath, 'static/images', secure_filename(f.filename))
+        # 删除文件
+        if (os.path.exists('./static/images/test.wav')):
+            os.remove('./static/images/test.wav')
         # 保存文件
         f.save(upload_path)
         # 重命名文件
-        os.rename(upload_path, './static/images/test2.wav')
+        os.rename(upload_path, './static/images/test.wav')
         # 返回上传成功界面
         return render_template('upload_ok.html')
     # 重新返回上传界面

@@ -1,4 +1,9 @@
-# okhttpFlaskDemo
-该库包括两个工程，Python Flask做的服务器（其中有网页版上传的测试网页upload.html）;以及Android的APP客户端。
-## FlaskServer
-## AndroidClient
+# 0.1.1
+
+实现同名文件的覆盖
+
+# 0.1
+
+实现音频文件的上传以及重命名
+# 0.0
+实现图片的上传
