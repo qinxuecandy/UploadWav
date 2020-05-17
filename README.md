@@ -1,3 +1,7 @@
+# 1.0.0
+
+实现patternlistener和uploadwav的融合
+
 # 0.1.1
 
 实现同名文件的覆盖

@@ -102,3 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# 忽略上传文件
+/FlaskServer/static/images
