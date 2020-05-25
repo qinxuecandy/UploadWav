@@ -37,6 +37,8 @@ def upload():
         f.save(upload_path)
         # 重命名文件
         os.rename(upload_path, './static/images/test.wav')
+        # 打开matlab
+        os.system("matlab -nosplash -nodesktop -r signal_processing")
         # 返回上传成功界面
         return render_template('upload_ok.html')
     # 重新返回上传界面
