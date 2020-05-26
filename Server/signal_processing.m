@@ -1,6 +1,6 @@
 % [x2,fs]=audioread('F:\Â¼Òô1117\7.m4a');
 clear;
-[x2,fs]=audioread('test13.wav');
+[x2,fs]=audioread('./static/images/test.wav');
 load jieguo_test11
 delta_length_1_test=delta_length_1;
 delta_length_2_test=delta_length_2;
